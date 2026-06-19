@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS General Sibling Selector (~)</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      div {
+        background-color: lightblue;
+        border: 2px solid blue;
+        padding: 15px;
+        margin: 15px 0;
+      }
+
+      /* Select all p elements that come after a div */
+      div ~ p {
+        color: red;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #fff3cd;
+        padding: 10px;
+        border-left: 5px solid orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS General Sibling Selector (~)</h1>
+
+    <p>Paragraph 1 - Not selected (comes before div)</p>
+
+    <div>This is a DIV element.</div>
+
+    <p>Paragraph 2 - Selected by div ~ p</p>
+
+    <p>Paragraph 3 - Selected by div ~ p</p>
+
+    <section>
+      <p>Paragraph 4 - Not selected because it is inside section</p>
+    </section>
+
+    <p>Paragraph 5 - Selected by div ~ p</p>
+  </body>
+</html>

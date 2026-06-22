@@ -1,14 +1,13 @@
 import java.io.*;
 import java.util.*;
 
-public class BPalindromeTwelveAndTwoTerms {
+public class BIcpcBalloons {
 
     static FastScanner fs = new FastScanner();
     static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws Exception {
 
-        // int t = 1;
         int t = fs.nextInt();
 
         while (t-- > 0) {
@@ -20,6 +19,19 @@ public class BPalindromeTwelveAndTwoTerms {
 
     static void solve() {
         int n = fs.nextInt();
+        String s = fs.next();
+
+        Stack<Character> stack = new Stack<>();
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (!stack.contains(s.charAt(i))) {
+                stack.add(s.charAt(i));
+                count++;
+            }
+            count++;
+        }
+
+        System.out.println(count);
 
     }
 

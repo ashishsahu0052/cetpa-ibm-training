@@ -1,25 +1,35 @@
 import java.io.*;
 import java.util.*;
 
-public class BPalindromeTwelveAndTwoTerms {
+public class AElephant {
 
     static FastScanner fs = new FastScanner();
     static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws Exception {
 
-        // int t = 1;
-        int t = fs.nextInt();
-
-        while (t-- > 0) {
-            solve();
-        }
-
-        // System.out.print(sb);
+        solve();
     }
 
     static void solve() {
         int n = fs.nextInt();
+        int steps = 0;
+        while (n > 0) {
+            if (n > 4) {
+                n = n - 5;
+            } else if (n > 3) {
+                n = n - 4;
+            } else if (n > 2) {
+                n = n - 3;
+            } else if (n > 1) {
+                n = n - 2;
+            } else {
+                n = n - 1;
+            }
+            steps++;
+
+        }
+        System.out.println(steps);
 
     }
 

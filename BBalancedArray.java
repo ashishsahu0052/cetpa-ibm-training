@@ -1,26 +1,50 @@
 import java.io.*;
 import java.util.*;
 
-public class BPalindromeTwelveAndTwoTerms {
+public class BBalancedArray {
 
     static FastScanner fs = new FastScanner();
     static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws Exception {
 
-        // int t = 1;
         int t = fs.nextInt();
 
         while (t-- > 0) {
             solve();
         }
 
-        // System.out.print(sb);
     }
 
     static void solve() {
         int n = fs.nextInt();
 
+        if (n % 4 != 0) {
+            System.out.println("NO");
+            return;
+        }
+
+        int k = n / 2;
+        int oddsum = 0;
+        int evensum = 0;
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 1; i <= k; i++) {
+            int val = 2 * i;
+            evensum += val;
+            sb.append(val).append(" ");
+        }
+        for (int i = 1; i < k; i++) {
+            int val = 2 * i - 1;
+            oddsum += val;
+            sb.append(val).append(" ");
+        }
+
+        sb.append(evensum - oddsum);
+        System.out.println("YES");
+
+        System.out.println(sb.toString());
     }
 
     static class FastScanner {

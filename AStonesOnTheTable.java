@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class BPalindromeTwelveAndTwoTerms {
+public class AStonesOnTheTable {
 
     static FastScanner fs = new FastScanner();
     static StringBuilder sb = new StringBuilder();
@@ -9,17 +9,32 @@ public class BPalindromeTwelveAndTwoTerms {
     public static void main(String[] args) throws Exception {
 
         // int t = 1;
-        int t = fs.nextInt();
+        // // t = fs.nextInt();
 
-        while (t-- > 0) {
-            solve();
-        }
+        // while (t-- > 0) {
+        // solve();
+        // }
+        solve();
 
         // System.out.print(sb);
     }
 
     static void solve() {
         int n = fs.nextInt();
+        String s = fs.next();
+        Stack<Character> stack = new Stack<>();
+
+        int count = 0;
+        stack.add(s.charAt(0));
+
+        for (int i = 1; i < n; i++) {
+            if (stack.peek() == s.charAt(i)) {
+                count++;
+            } else {
+                stack.add(s.charAt(i));
+            }
+        }
+        System.out.println(count);
 
     }
 

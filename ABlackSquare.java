@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class BPalindromeTwelveAndTwoTerms {
+public class ABlackSquare {
 
     static FastScanner fs = new FastScanner();
     static StringBuilder sb = new StringBuilder();
@@ -9,17 +9,30 @@ public class BPalindromeTwelveAndTwoTerms {
     public static void main(String[] args) throws Exception {
 
         // int t = 1;
-        int t = fs.nextInt();
+        // // t = fs.nextInt();
 
-        while (t-- > 0) {
-            solve();
-        }
+        // while (t-- > 0) {
+        solve();
+        // }
 
-        // System.out.print(sb);
+        System.out.print(sb);
     }
 
     static void solve() {
-        int n = fs.nextInt();
+        int count = 0;
+        int[] arr = new int[5];
+        for (int i = 1; i < 5; i++) {
+            arr[i] = fs.nextInt();
+        }
+        String s = fs.next();
+
+        for (char i : s.toCharArray()) {
+            int n = Character.getNumericValue(i);
+
+            count += arr[n];
+        }
+
+        System.out.println(count);
 
     }
 

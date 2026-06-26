@@ -1,57 +1,31 @@
 import java.io.*;
-import java.util.*;
 
 public class BPalindromeTwelveAndTwoTerms {
-
-    static FastScanner fs = new FastScanner();
-    static StringBuilder sb = new StringBuilder();
-
     public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        // int t = 1;
-        int t = fs.nextInt();
+        int t = Integer.parseInt(br.readLine());
 
         while (t-- > 0) {
-            solve();
-        }
+            long n = Long.parseLong(br.readLine());
 
-        // System.out.print(sb);
-    }
-
-    static void solve() {
-        int n = fs.nextInt();
-
-    }
-
-    static class FastScanner {
-        private final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        private StringTokenizer st;
-
-        String next() {
-            while (st == null || !st.hasMoreTokens()) {
-                try {
-                    st = new StringTokenizer(br.readLine());
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+            if (n == 10) {
+                System.out.println(-1);
+                continue;
             }
-            return st.nextToken();
-        }
 
-        int nextInt() {
-            return Integer.parseInt(next());
-        }
+            long rem = n % 12;
+            long a;
 
-        long nextLong() {
-            return Long.parseLong(next());
-        }
-
-        String nextLine() {
-            try {
-                return br.readLine();
-            } catch (IOException e) {
-                return "";
+            if (rem <= 9) {
+                a = rem;
+            } else if (rem == 10) {
+                a = 22;
+            } else { // rem == 11
+                a = 11;
             }
+
+            System.out.println(a + " " + (n - a));
         }
     }
 }
